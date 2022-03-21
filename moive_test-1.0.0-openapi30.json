@@ -1,0 +1,66 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Moive_test",
+    "description" : "No description",
+    "contact" : { },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://7idg59p.ap.api-mocks.com",
+    "description" : "This is your API mock endpoint. When called, it will simulate the behavior of your API."
+  }, {
+    "url" : "http://localhost:8090"
+  } ],
+  "paths" : {
+    "/Moives" : {
+      "get" : {
+        "summary" : "Get a list of movies",
+        "operationId" : "getMoive",
+        "responses" : {
+          "200" : {
+            "description" : "Status 200",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object"
+                },
+                "example" : "<movies>\n  <movie>\n    <movieId>1</movieId>\n    <title>The Social Network</title>\n    <releaseYear>2010</releaseYear>\n    <director>David Fincher</director>\n    <price>4.99</price>\n  </movie>\n  <movie>\n    <movieId>2</movieId>\n    <title>La La Land</title>\n    <releaseYear>2016</releaseYear>\n    <director>Damien Chazelle</director>\n    <price>5.99</price>\n  </movie>\n  <movie>\n    <movieId>3</movieId>\n    <title>Ex Machine</title>\n    <releaseYear>2014</releaseYear>\n    <director>Alex Garland</director>\n    <price>4.99</price>\n  </movie>\n</movies>"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "Movies" : {
+        "type" : "object",
+        "properties" : {
+          "movie" : {
+            "type" : "object",
+            "properties" : {
+              "movieId" : {
+                "type" : "string"
+              },
+              "title" : {
+                "type" : "string"
+              },
+              "releaseYear" : {
+                "type" : "string"
+              },
+              "director" : {
+                "type" : "string"
+              },
+              "price" : {
+                "type" : "string"
+              }
+            }
+          }
+        },
+        "example" : "{\r\n  \"movie\": {\r\n    \"movieId\": \"1\",\r\n    \"title\": \"The Social Network\",\r\n    \"releaseYear\": \"2010\",\r\n    \"director\": \"David Fincher\",\r\n    \"price\": \"4.99\"\r\n  }\r\n}"
+      }
+    }
+  }
+}
